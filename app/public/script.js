@@ -30,20 +30,20 @@ $(document).ready(function () {
         event.preventDefault();
         
         function validateForm() {
-        var isValid = true;
+        var results = true;
         
             $(".form-control").each(function() {
                 if ($(this).val() === "") {
-                isValid = false;
+                results = false;
                 }
             });
         
             $(".chosen-select").each(function() {
                 if ($(this).val() === "") {
-                isValid = false;
+                results = false;
                 }
             });
-            return isValid;
+            return results;
         }
         // If all required fields are filled
         if (validateForm()) {
@@ -76,7 +76,7 @@ $(document).ready(function () {
             $("#results-modal").modal("toggle");
         });
         } else {
-        alert("Plese ");
+        alert("Please complete the survey!");
         }
     });
 });//Document.ready function
