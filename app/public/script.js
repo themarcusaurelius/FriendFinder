@@ -32,18 +32,18 @@ $(document).ready(function () {
         function validateForm() {
         var isValid = true;
         
-        $(".form-control").each(function() {
-            if ($(this).val() === "") {
-            isValid = false;
-            }
-        });
+            $(".form-control").each(function() {
+                if ($(this).val() === "") {
+                isValid = false;
+                }
+            });
         
-        $(".chosen-select").each(function() {
-            if ($(this).val() === "") {
-            isValid = false;
-            }
-        });
-        return isValid;
+            $(".chosen-select").each(function() {
+                if ($(this).val() === "") {
+                isValid = false;
+                }
+            });
+            return isValid;
         }
         // If all required fields are filled
         if (validateForm()) {
@@ -76,9 +76,7 @@ $(document).ready(function () {
             $("#results-modal").modal("toggle");
         });
         } else {
-        alert("Please fill out all fields before submitting!");
+        alert("Plese ");
         }
     });
 });//Document.ready function
-
-console.log("test");

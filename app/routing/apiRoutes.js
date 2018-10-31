@@ -2,12 +2,12 @@
 // LOAD DATA
 // We are linking our routes to a series of "data" sources.
 // ===============================================================================
-var express = require("express");
-var bodyParser = require("body-parser");
-var path = require("path");
-var app = express();
-var apiRoutes = express.Router();
-var userData = require("../data/friends.js");
+let express = require("express");
+let bodyParser = require("body-parser");
+let path = require("path");
+let app = express();
+let apiRoutes = express.Router();
+let userData = require("../data/friends.js");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
