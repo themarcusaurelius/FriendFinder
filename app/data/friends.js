@@ -5,6 +5,23 @@
 // ===============================================================================
 var userData = [
         {
+            "name":"Jean ralphio", 
+            "photo":"http://farm8.staticflickr.com/7029/6483299771_cd3d9a2953.jpg",
+            "quote": "Why don’t you turn that frizzown upside-dizzity",
+            "score":[
+                5,
+                5,
+                1,
+                5,
+                3,
+                5,
+                1,
+                1,
+                5,
+                5
+            ]
+        },
+        {
             "name":"Dear", 
             "photo":"https://cdn.pixabay.com/photo/2016/08/11/17/53/roe-deer-1586373_1280.jpg",
             "quote": "Grass is good",
@@ -29,11 +46,11 @@ var userData = [
                 5,
                 5,
                 1,
-                5,
+                2,
                 1,
                 5,
-                1,
                 3,
+                2,
                 5,
                 5
             ]
@@ -109,7 +126,6 @@ var userData = [
         
     ]
     
-
   // Note how we export the array. This makes it accessible to other files using require.
   module.exports = userData;
   

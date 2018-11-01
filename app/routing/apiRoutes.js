@@ -19,22 +19,21 @@ apiRoutes.post("/api/friends", function(req, res) {
     let newUser = req.body;
     let totUserData = 0;
     let userDataArr = [];
+    console.log(req.body);
     
-    for (let i = 0; i < newUser.scores.length; i++) {
-        newUser.score[i] = parseInt(newUser.score[i]);
-    }
-    userData.push(newUser);
-
     for (let i = 0; i < userData.length -1; i++) {
-        for (var x = 0; x < newUser.score.length; x++) {
-            totUserData =+ Math.abs(newUser.score[x] - userData[i].score[j])
+        for (var x = 0; x < newUser.scores.length; x++) {
+            totUserData += Math.abs(parseInt(newUser.scores[x]) - userData[i].score[x])
         }
         userDataArr.push(totUserData);
     }
-
-    let match = (userDataArr.indexOf(Math.min.apply(Math, totUserData)));
+    
+    // Math.min.apply(Math, array) Find the minimum in the second argument (has to be an array)
+    let match = (userDataArr.indexOf(Math.min.apply(null, userDataArr)));
     let topMatch = (userData[match])
     
+    userData.push(newUser);
+    console.log(topMatch);
     res.json(topMatch)
     
 });

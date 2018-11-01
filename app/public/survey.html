@@ -6,34 +6,39 @@
   <title>FriendFinder</title>
 
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  
+  
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-  
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="/app/public/style.css" />
-  
+  <!-- Chosen -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
-
+  <link rel="stylesheet" type="text/css" media="screen" href="/app/public/style.css" />
 </head>
 
 <body>
 
     <div class="container">
         <div class="jumbotron">
-            <h2>Survey Questions</h2>
-            <hr>
-            <h3><strong>About You</strong></h3>
-            <h4>Name (Required)</h4>
-            <input type="text" id="name" class="form-control" required="yes">
-            <h4>Link to Photo Image (Required)</h4>
-            <input type="text" id="photo" class="form-control" required="yes">
-            <h4>Personal Message</h4>
-            <input type="text" id="quote" class="form-control" required="yes">
-            <br>
-            <button type="button" class="btn btn-lg button" onclick="smoothScroll(document.getElementById('first'))"><h4>Continue</h4></button>   
+            <form class="needs-validation" novalidate>
+                <h2>Survey Questions</h2>
+                <hr>
+                <h3><strong>About You</strong></h3>
+                <h4>Name (Required)</h4>
+                <input type="text" id="name" class="form-control" required>
+                <br>
+                <h4>Link to Photo Image (Required)</h4>
+                <input type="text" id="photo" class="form-control" required>
+                <br>
+                <h4>Personal Message</h4>
+                <input type="text" id="quote" class="form-control" required>
+                <br>
+                <button type="button" class="btn btn-lg button" onclick="smoothScroll(document.getElementById('first'))"><h4>Continue</h4></button>   
+            </form>
         </div>
         
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -214,7 +219,7 @@
             <h3><strong>Finished!</strong></h3>
             <h4>Click submit to find out who your best friend is!</h4>
             <br>
-            <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit</button>
         </div>
         
         <hr>
@@ -231,20 +236,18 @@
     <div id="results-modal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h2 class="modal-title"><strong>Your Top Match: </strong></h2>
+                <div class="modal-header">
+                    <h2 class="modal-title "><strong>Your Top Match: </strong></h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="name"></h2>
+                    <img id="img" src="" alt="">
+                    <h3 id="quote"></h3>
+                </div>
+                <div class="modal-footer centered">
+                    <button type="button" class="button btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
-            <div class="modal-body">
-                <h2 id="name"></h2>
-                <img id="img" src="" alt="">
-                <h3 id="quote"></h3>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-            </div>
-    
         </div>
     </div>
 
@@ -271,8 +274,7 @@
     </script>   
     
     
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    
     <script type="text/javascript" src="/app/public/script.js"></script>
     
 </body>

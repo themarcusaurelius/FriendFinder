@@ -29,7 +29,7 @@ $(document).ready(function () {
     $("#submit").on("click", function(event) {
         event.preventDefault();
         
-        function validateForm() {
+        function processResults() {
         var results = true;
         
             $(".form-control").each(function() {
@@ -46,33 +46,31 @@ $(document).ready(function () {
             return results;
         }
         // If all required fields are filled
-        if (validateForm()) {
+        if (processResults()) {
         // Create an object for the user"s data
         var userData = {
             name: $("#name").val(),
             photo: $("#photo").val(),
             quote: $("#quote").val(),
             scores: [
-            $("#q1").val(),
-            $("#q2").val(),
-            $("#q3").val(),
-            $("#q4").val(),
-            $("#q5").val(),
-            $("#q6").val(),
-            $("#q7").val(),
-            $("#q8").val(),
-            $("#q9").val(),
-            $("#q10").val()
+                $("#q1").val(),
+                $("#q2").val(),
+                $("#q3").val(),
+                $("#q4").val(),
+                $("#q5").val(),
+                $("#q6").val(),
+                $("#q7").val(),
+                $("#q8").val(),
+                $("#q9").val(),
+                $("#q10").val()
             ]
         };
-        // AJAX post the data to the friends API.
+        
         $.post("/api/friends", userData, function(data) {
-            // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-            $("#matchName").text(data.name);
-            $("#matchImg").attr("src", data.photo);
-            $("#matchQuote").text(data.quote);
-
-            // Show the modal with the best match
+            
+            $("#name").text(data.name);
+            $("#img").attr("src", data.photo);
+            $("#quote").text(data.quote);
             $("#results-modal").modal("toggle");
         });
         } else {
