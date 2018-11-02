@@ -19,11 +19,10 @@ apiRoutes.post("/api/friends", function(req, res) {
     let newUser = req.body;
     let totUserData = 0;
     let userDataArr = [];
-    console.log(req.body);
     
-    for (let i = 0; i < userData.length -1; i++) {
-        for (var x = 0; x < newUser.scores.length; x++) {
-            totUserData += Math.abs(parseInt(newUser.scores[x]) - userData[i].score[x])
+    for (let i = 0; i < userData.length; i++) {
+        for (var x = 0; x < newUser.score.length; x++) {
+            totUserData =+ Math.abs(parseInt(newUser.score[x]) - userData[i].score[x])
         }
         userDataArr.push(totUserData);
     }
@@ -33,7 +32,6 @@ apiRoutes.post("/api/friends", function(req, res) {
     let topMatch = (userData[match])
     
     userData.push(newUser);
-    console.log(topMatch);
     res.json(topMatch)
     
 });

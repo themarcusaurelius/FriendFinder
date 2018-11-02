@@ -25,7 +25,7 @@ $(document).ready(function () {
         scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
     };
 
-    // Capture the form inputs
+    
     $("#submit").on("click", function(event) {
         event.preventDefault();
         
@@ -45,14 +45,14 @@ $(document).ready(function () {
             });
             return results;
         }
-        // If all required fields are filled
+        
         if (processResults()) {
-        // Create an object for the user"s data
+        
         var userData = {
             name: $("#name").val(),
             photo: $("#photo").val(),
             quote: $("#quote").val(),
-            scores: [
+            score: [
                 $("#q1").val(),
                 $("#q2").val(),
                 $("#q3").val(),
@@ -68,9 +68,9 @@ $(document).ready(function () {
         
         $.post("/api/friends", userData, function(data) {
             
-            $("#name").text(data.name);
+            $("#name").attr("text",data.name);
             $("#img").attr("src", data.photo);
-            $("#quote").text(data.quote);
+            $("#quote").attr("text",data.quote);
             $("#results-modal").modal("toggle");
         });
         } else {
