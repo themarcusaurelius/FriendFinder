@@ -68,9 +68,9 @@ $(document).ready(function () {
         
         $.post("/api/friends", userData, function(data) {
             
-            $("#name").attr("text",data.name);
+            $(".name").text(data.name);
             $("#img").attr("src", data.photo);
-            $("#quote").attr("text",data.quote);
+            $(".quote").text(data.quote);
             $("#results-modal").modal("toggle");
         });
         } else {

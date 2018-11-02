@@ -34,7 +34,7 @@
                 <h4>Link to Photo Image (Required)</h4>
                 <input type="text" id="photo" class="form-control" required>
                 <br>
-                <h4>Personal Message</h4>
+                <h4>Personal Quote</h4>
                 <input type="text" id="quote" class="form-control" required>
                 <br>
                 <button type="button" class="btn btn-lg button" onclick="smoothScroll(document.getElementById('first'))"><h4>Continue</h4></button>   
@@ -237,15 +237,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title "><strong>Your Top Match: </strong></h2>
+                    <h2 class="modal-title"><strong>Your Top Match: </strong></h2>
                 </div>
                 <div class="modal-body">
-                    <h2 id="name"></h2>
+                    <h2 class="name"></h2>
                     <img id="img" src="" alt="">
-                    <h3 id="quote"></h3>
+                    <h4 class="quote"></h4>
                 </div>
-                <div class="modal-footer centered">
-                    <button type="button" class="button btn btn-default" data-dismiss="modal">Close</button>
+                <div class="modal-footer">
+                    <button type="button" class="button btn modal-button btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

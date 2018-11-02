@@ -20,7 +20,7 @@ apiRoutes.post("/api/friends", function(req, res) {
     let totUserData = 0;
     let userDataArr = [];
     
-    for (let i = 0; i < userData.length; i++) {
+    for (let i = 0; i < userData.length -1; i++) {
         for (var x = 0; x < newUser.score.length; x++) {
             totUserData =+ Math.abs(parseInt(newUser.score[x]) - userData[i].score[x])
         }
